@@ -6,7 +6,7 @@ This information should be enough to get you started, and should be enough for s
 
 ### To run the test program
 
-Look at the source code for `test.c` first. It does some really nasty things, and I want you to be aware of that. If memwatch can't capture SIGSEGV (General Protection Fault for Windoze), your program will dump core (crash for Windoze).
+Look at the source code for `test.c` first. It does some really nasty things, and I want you to be aware of that. If memwatch can't capture SIGSEGV (General Protection Fault for Windows), your program will dump core (crash on Windows).
 
 Once you've done that, you can build the test program.
 
@@ -27,7 +27,7 @@ Then simply run the test program.
 
 * Make sure that `memwatch.h` is included in all of the source code files. If you have an include file that all of the source code uses, you might be able to include `memwatch.h` from there.
 
-* Recompile the program with `MEMWATCH` defined. See your compiler's documentation if you don't know how to do this. The usual switch looks like `-DMEMWATCH`. To have MEMWATCH use `stderr` for some output (like, "Abort, Retry, Ignore?"), please also define `MW_STDIO` (or `MEMWATCH_STDIO`, same thing).
+* Recompile the program with `MEMWATCH` defined. See your compiler's documentation if you don't know how to do this. The usual switch looks like `-DMEMWATCH`. To have memwatch use `stderr` for some output (like, "Abort, Retry, Ignore?"), please also define `MW_STDIO` (or `MEMWATCH_STDIO`, same thing).
 
 * Run the program and examine the output in the log file `memwatch.log`. If you didn't get a log file, you probably didn't do step 1 and 2 correctly, or your program crashed before memwatch flushed the file buffer. To have memwatch _always_ flush the buffer, add a call to `mwDoFlush(1)` at the top of your main function.
 
