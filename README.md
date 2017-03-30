@@ -1,3 +1,7 @@
+```diff
+- Note that this code is very old (but functional) and placed here for archival purposes.
+```
+
 # memwatch
 
 Cross-platform nonintrusive ANSI C memory leak / overwrite detection library.
