@@ -1,6 +1,6 @@
 # memwatch
 
-Cross-platform memory leak detection library.
+Cross-platform nonintrusive ANSI C memory leak / overwrite detection library.
 
 This information should be enough to get you started, and should be enough for small projects. For more info, see the files USING and the FAQ. If this is not enough, see `memwatch.h`, which is well documented.
 
