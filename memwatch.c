@@ -2599,7 +2599,7 @@ MemWatch::~MemWatch() {
 ** This global new will catch all 'new' calls where MEMWATCH is
 ** not active.
 */
-void* operator new( unsigned size ) {
+void* operator new( size_t size ) {
     mwNCur = 0;
     return mwMalloc( size, "<unknown>", 0 );
     }
@@ -2607,7 +2607,7 @@ void* operator new( unsigned size ) {
 /*
 ** This is the new operator that's called when a module uses mwNew.
 */
-void* operator new( unsigned size, const char *file, int line ) {
+void* operator new( size_t size, const char *file, int line ) {
     mwNCur = 0;
     return mwMalloc( size, file, line );
     }
@@ -2616,7 +2616,7 @@ void* operator new( unsigned size, const char *file, int line ) {
 ** This is the new operator that's called when a module uses mwNew[].
 ** -- hjc 07/16/02
 */
-void* operator new[] ( unsigned size, const char *file, int line ) {
+void* operator new[] ( size_t size, const char *file, int line ) {
     mwNCur = 0;
     return mwMalloc( size, file, line );
     }
